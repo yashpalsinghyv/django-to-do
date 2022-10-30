@@ -1,6 +1,7 @@
 FROM python:3
+WORKDIR /home/jenkins/project/django-todo
 RUN pip install django==3.2
 COPY . .
 RUN python manage.py migrate
 EXPOSE 8000
-CMD ["python3","runserver","0.0.0.0:8000"]
+CMD ["python","runserver","0.0.0.0:8000"]
